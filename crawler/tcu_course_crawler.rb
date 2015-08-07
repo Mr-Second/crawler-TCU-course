@@ -63,7 +63,7 @@ class TzuChiUniversityCrawler
           code: "#{@year + 1911}-#{@term}-#{data[0]}-?(#{data[2]})?",
           # general_code: data[2],    # 選課代碼
           # url: data[9],    # 課程大綱之類的連結(抓下來的是HTML語法，網頁要用POST的才能顯示)
-          required: data[6],    # 必修或選修
+          required: data[6].include?('必'),    # 必修或選修
           department: dept_n + data[4],    # 開課系所
           # department_code: dept_c,
           day_1: course_days[0],
